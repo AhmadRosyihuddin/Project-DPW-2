@@ -4,66 +4,51 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous" />
-    <title>Welcome to Restaurant</title>
-    <style>
-      .jumbotron {
-        background-image: url(aset/resto.jpg);
-        background-size: cover;
-        height: 625px;
-        text-align: center;
-        padding-top: 80px;
-      }
-      .jumbotron .display-4 {
-        color: white;
-        margin-top: 170px;
-      }
-
-      .jumbotron p {
-        font-size: 19px;
-        color: white;
-      }
-
-      #judul {
-        font-weight: bolder;
-        font-family: "Script MT", Segoe Script, Kaufmann BT;
-        font-size: 70px;
-      }
-    </style>
+    <link rel="stylesheet" href="fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Reservation Restaurant</title>
   </head>
-  <body id="page-top">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-transparant fixed-top" id="mainNav">
-      <div class="container">
-        <a class="navbar-brand font-weight-bold text-white" href="#">ROYAL MY TASTE RESTAURANT</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link active text-white" aria-current="page" href="#">HOME</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-white" href="#">MENU</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-white" href="#">COMPLAIN</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-white" href="#">ABOUT</a>
-            </li>
-          </ul>
+  <body>
+    <!--------------------------------------------------------TAMPILAN WELCOME------------------------------------------------------------------------->
+    <div class="tampilan1" id="page1" style="display: block">
+      <!---------------------------------------------------- Navbar ------------------------------------------------------------------------>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-transparant fixed-top" id="mainNav">
+        <div class="container">
+          <a class="navbar-brand font-weight-bold text-white" href="#">ROYAL MY TASTE RESTAURANT</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link active text-white" aria-current="page" href="#">HOME</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#">MENU</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#">COMPLAIN</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#">ABOUT</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!---------------------------------------------------------------------- Batas Navbar ---------------------------------------------------->
+      <!---------------------------------------------------------------------- code Welcome --------------------------------------------------->
+
+      <div class="jumbotron">
+        <div class="container1">
+          <p id="judul" class="display-4">Welcome to My Taste Restaurant</p>
+          <p>Menyediakan berbagai menu makanan bintang lima dengan cita rasa luar biasa. Pelanggan kenyang, Kami pun senang :)</p>
+          <br />
+          <button class="btn btn-primary btn-lg active" aria-pressed="true" value="True" onclick="slide(value)">Masuk</button>
         </div>
       </div>
-    </nav>
-
-    <div class="jumbotron">
-      <div class="contaiiner">
-        <p id="judul" class="display-4">Welcome to My Taste Restaurant</p>
-        <p>Menyediakan berbagai menu makanan bintang lima dengan cita rasa luar biasa. Pelanggan kenyang, Kami pun senang :)</p>
-        <br />
-        <a class="btn btn-primary btn-lg" href="h2.html" role="button" type="submit">Masuk</a>
-      </div>
     </div>
+    <!-------------------------------------------------------------- BATAS TAMPILAN Welcome -------------------------------------------->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
   </body>
