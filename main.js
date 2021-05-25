@@ -1,3 +1,4 @@
+// meng inputkan saldo
 var btn = document.getElementById('plus');
 var sisa = 0
 btn.addEventListener('click',function uang(){
@@ -7,6 +8,7 @@ btn.addEventListener('click',function uang(){
     document.getElementById('budget').value = ""
 });
 
+// live membuat inputan berformat rupiah
 var rupiah = document.getElementById("budget");
 rupiah.addEventListener("keyup", function(e) {
   // tambahkan 'Rp.' pada saat form di ketik
@@ -31,3 +33,18 @@ function formatRupiah(angka, prefix) {
   rupiah = split[1] != undefined ? rupiah + "," + split[1] : rupiah;
   return prefix == undefined ? rupiah : rupiah ? "Rp. " + rupiah : "";
 };
+
+// Fungsi untuk memfilter menu dari nilai bdget
+var prices = document.querySelectorAll('.harga');
+btn.addEventListener('click',function filter(){
+    prices.forEach(function(price){
+        var harga = parseInt(price.textContent.split('.').join(''));
+        if(harga <= saldo){
+          price.parentNode.parentNode.parentNode.style.display = 'block';
+        }
+        else{
+            price.parentNode.parentNode.parentNode.style.display = 'none';
+
+        }
+    });
+});
