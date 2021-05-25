@@ -39,7 +39,21 @@ function formatRupiah(angka, prefix) {
 
 // Fungsi untuk memfilter menu dari nilai bdget
 var prices = document.querySelectorAll('.harga');
+var tombol = document.getElementById('tambah');
 btn.addEventListener('click',function filter(){
+    prices.forEach(function(price){
+        var harga = parseInt(price.textContent.split('.').join(''));
+        if(harga <= saldo){
+          price.parentNode.parentNode.parentNode.style.display = 'block';
+        }
+        else{
+            price.parentNode.parentNode.parentNode.style.display = 'none';
+
+        }
+    });
+});
+
+tombol.addEventListener('click',function filter(){
     prices.forEach(function(price){
         var harga = parseInt(price.textContent.split('.').join(''));
         if(harga <= saldo){
