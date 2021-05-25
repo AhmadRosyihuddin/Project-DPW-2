@@ -1,6 +1,6 @@
 // meng inputkan saldo
 var btn = document.getElementById('plus');
-var sisa = 0
+var saldo = 0
 btn.addEventListener('click',function uang(){
     var budget = document.getElementById('budget').value;
     document.getElementById('jumlah_saldo').innerHTML = budget;
