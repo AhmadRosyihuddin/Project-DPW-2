@@ -31,17 +31,33 @@
                 <a class="nav-link" href="#">Laporkan</a>
               </li>
             </ul>
-
+            
             <div class="card" style="margin-right: 12px; margin-top: 3px">
               <div class="card-body" style="height: 1px">
-                <p style="margin-top: -13px; text-align: center" id="sisa" style="margin-left: 10px">Rp. 0</p>
+                <p style="margin-top: -13px; text-align: center" id="jumlah_saldo" style="margin-left: 10px">Saldo : Rp. 0</p>
               </div>
             </div>
-
+            
             <div class="icon" style="margin-top: 3px">
               <h4>
                 <i class="fas fa-cart-plus me-2 mt-2" style="margin-left: 5px"></i>
                 <i class="fas fa-money-bill-wave-alt me-2 mt-2" data-bs-toggle="modal" data-bs-target="#saldo" style="margin-left: 5px"></i>
+                <div class="modal fade" id="saldo">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="judulModal">Masukkan Nominal Uang Anda</h5>
+                      </div>
+                      <div class="modal-body">
+                        <input type="text" id="budget" placeholder="Rp. " style="width: 465px;">
+                      </div>
+                      <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                          <button type="button" class="btn btn-primary" id="plus" data-bs-dismiss="modal">Tambah</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </h4>
             </div>
           </div>
