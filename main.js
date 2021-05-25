@@ -3,7 +3,7 @@ var btn = document.getElementById('plus');
 var sisa = 0
 btn.addEventListener('click',function uang(){
     var budget = document.getElementById('budget').value;
-    document.getElementById('sisa').innerHTML = budget;
+    document.getElementById('jumlah_saldo').innerHTML = budget;
     sisa = budget.split('Rp. ')[1].split('.').join('')
     document.getElementById('budget').value = ""
 });
