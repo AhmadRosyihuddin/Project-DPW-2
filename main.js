@@ -1,10 +1,13 @@
-// meng inputkan saldo
+// fungsi untuk inputan pop up menambah saldo
 var btn = document.getElementById('plus');
-var sisa = 0
+var saldo = 0;
 btn.addEventListener('click',function uang(){
     var budget = document.getElementById('budget').value;
-    document.getElementById('jumlah_saldo').innerHTML = budget;
-    sisa = budget.split('Rp. ')[1].split('.').join('')
+    saldo += parseInt(budget.split('Rp. ')[1].split('.').join(''))
+    var rubah = saldo.toString().split('').reverse().join('');
+    var hasil = rubah.match(/\d{1,3}/g);
+    hasil = hasil.join('.').split('').reverse().join('');
+    document.getElementById('jumlah_saldo').innerHTML = 'Saldo : Rp. '+hasil;
     document.getElementById('budget').value = ""
 });
 
