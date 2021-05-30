@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous" />
+    <script src="https://kit.fontawesome.com/7edde9a01a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="aset/icon.png" />
+    <title>Contact</title>
+  </head>
+  <body>
+    <!--------------------------------------------------------TAMPILAN DISPLAY ABOUT ------------------------------------------------------------------------->
+    <div class="tampilancontac" style="background-color: #fff200">
+      <!-- header section starts -->
+      <nav class="navbar navbar-expand-lg navbar-dark bg-transparant fixed-top" id="mainNav">
+        <div class="container">
+          <a class="navbar-brand font-weight-bold text-white" href="#">MY TASTE RESTAURANT</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link text-white" aria-current="page" href="index.html">HOME</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" aria-current="page" href="about.html">ABOUT</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active text-white" aria-current="page" href="contact.html">SERVICE</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- header section ends -->
+
+      <!-- about section starts  -->
+
+      <section id="about" class="container m-0 p-0" style="background-color: #fff200">
+        <div class="heading text-center">
+          <h1><span style="color: white">Report</span> Us</h1>
+        </div>
+
+        <div class="row min-vh-100">
+          <div class="col-md-6 text-center text-md-left align-self-center content">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <div id="kartu" align="center">
+              <div class="card text-center" style="width: 60%">
+                <div class="card-body">
+                  <h5 class="card-title">Apakah anda memerlukan sebuah bantuan ?</h5>
+                  <br />
+                  <!----------------------------pilihan noooooo--------------------------->
+                  <div id="no" style="display: none">
+                    <p class="card-text" style="color: black">Kami selalu siap membantu semua kesulitan pelanggan.</p>
+                    <br />
+                    <a href="contact.html" class="btn btn-primary">Back</a>
+                  </div>
+                  <!----------------------------pilihan yesssss---------------------------->
+                  <div id="yes" align="center" style="display: none">
+                    <caption>
+                      Pilih salah satu pelayan untuk menerima bantuan
+                    </caption>
+                    <div class="row text-center p-3">
+                      <div class="col-md-4">
+                        <div class="card">
+                          <img class="profil" src="aset/rosik2.png" class="card-img-top" alt="Rosik" />
+                          <div class="card-body">
+                            <p>
+                              <a class="btn btn-danger btn-sm" href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSKkxGqGBwfXMZqfDjHdtVvdkCJZwqMZWfFgcVtSxtxDJDbCbcslwsNthVGdGbRSSZmXJmXr">call</a>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-4">
+                        <div class="card">
+                          <img class="profil" src="aset/kharisma.png" class="card-img-top" alt="Kharisma" />
+                          <div class="card-body">
+                            <p>
+                              <a class="btn btn-danger btn-sm" href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcRzDfqGHFfgMdMMdRbNLGCZPQfKQcTVSGvVQCnlhdnltSzzwNVLkMBzVKpJSnLFxqchwBVCR">call</a>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-4">
+                        <div class="card">
+                          <img class="profil" src="aset/fiqri.png" class="card-img-top" alt="fiqri" />
+                          <div class="card-body">
+                            <p>
+                              <a class="btn btn-danger btn-sm" href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcRzDfqGHFfgMdMMdRbNLGCZPQfKQcTVSGvVQCnlhdnltSzzwNVLkMBzVKpJSnLFxqchwBVCR">call</a>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <br />
+                    <a href="contact.html" class="btn btn-primary">Back</a>
+                  </div>
+                  <!----------------------------button pilihan---------------------------->
+                  <div id="servis" style="display: block">
+                    <button class="btn btn-danger me-2" value="True" onclick="bantuan(value)">NO</button>
+                    <button class="btn btn-success" value="false" onclick="bantuan(value)" style="margin-top: 1rem">YES</button>
+                  </div>
+                  <!----------------------------batas button pilihan---------------------------->
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 image">
+            <img id="g2" src="images/pic.png" alt="" />
+          </div>
+        </div>
+      </section>
+
+      <!-- about section ends  -->
+
+      <!-- contact section starts  -->
+
+      <section id="contact" class="container-fluid">
+        <div class="heading text-center">
+          <h1><span>contact</span> us</h1>
+        </div>
+
+        <div class="row justify-content-center">
+          <form action="" class="col-md-7">
+            <div class="inputBox">
+              <input type="text" required />
+              <h3>full name</h3>
+            </div>
+
+            <div class="inputBox">
+              <input type="email" required />
+              <h3>e-mail</h3>
+            </div>
+
+            <div class="inputBox">
+              <textarea required name="" id="" cols="30" rows="10"></textarea>
+              <h3>message</h3>
+            </div>
+
+            <input type="submit" value="send" />
+          </form>
+        </div>
+      </section>
+
+      <!-- contact section ends  -->
+    </div>
+    <!--------------------------------------------------SCRIPT JAVASCRIPT--------------------------------------------------------------------------->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
