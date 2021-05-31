@@ -71,3 +71,32 @@ btn_res.addEventListener('click',function(){
   }
   
 })
+
+
+
+// Fungsi menampilkan struk pembayaran
+var bayar = document.getElementById('bayar');
+bayar.addEventListener('click',function(){
+  if(Object.keys(database).length != 0){
+    document.getElementById('page3').style.display = 'none';
+    document.getElementById('pay').style.display = 'block';
+    document.getElementById('customer').innerHTML = data_pembeli[0].toUpperCase();
+    document.getElementById('mejacus').innerHTML = data_pembeli[1];
+    
+    for(let i in database){
+      $('#pesanan').append(
+        '<tr id="row">'+
+          '<td>'+i+'</td>'+
+          '<td><td>Rp. </td><td style="text-align: right;">'+format(database[i][1])+'</td></td>'+
+          '<td><span style="color:white;">---</span>x '+database[i][0]+'<span style="color:white;">---</span></td>'+
+          '<td><td>Rp. </td><td style="text-align: right;">'+format(database[i][2])+'</td></td>'+
+        '<tr>');
+        document.getElementById('total bayar').innerHTML = format(jumlah);
+        document.getElementById('sisa uang').innerHTML = format(saldo);
+    };
+  }
+  else{
+    Swal.fire('Masukkan Pesanan Anda','','error')
+  };
+});
+
