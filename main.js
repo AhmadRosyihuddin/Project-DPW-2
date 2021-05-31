@@ -55,6 +55,42 @@ function formatRupiah(angka, prefix) {
   return prefix == undefined ? rupiah : rupiah ? "Rp. " + rupiah : "";
 };
 
+// Fungsi filter menu dengan jenis/kategori
+var katalog = 'AllOfMenu';
+var titles = {
+    AllOfMenu: "MENU RESTAURANT",
+    nusantara: "NUSANTARA FOOD",
+    asia: "ASIAN FOOD",
+    chinees: "CHINNES FOOD",
+    korea: "KOREA FOOD",
+    western: "WESTREN FOOD",
+    arab: "ARABIC FOOD",
+    laut: "SEAFOOD",
+    beverage: "BEVERAGE",
+};
+function menu_filter(value) {
+  katalog = value;
+  var identitas = document.querySelectorAll(".navbar_menu");
+  var title = document.getElementById("develop");
+  var prices = document.querySelectorAll('.harga');
+  
+  identitas.forEach(function (menu,index) {
+    var harga = parseInt(prices[index].textContent.split('.').join(''));
+    if (value == "AllOfMenu" && harga <= saldo) {
+        document.getElementById("carouselExampleControls").style.display = "block";
+        title.innerHTML = titles[value];
+        menu.style.display = "block";
+    }
+    else if (menu.attributes[1].nodeValue == value && harga<=saldo) {
+        menu.style.display = "block";
+        title.innerHTML = titles[value];
+    }
+    else {
+        menu.style.display = "none";
+    }
+  });
+};
+
 // warning jika saldo tidak cukup
 function jumlah_porsi(id,nilai,tombol,warning){
   var total = 0;
@@ -159,6 +195,20 @@ function porsi(data){
   console.log(database);
 };
 
+// fungsi untuk pengganti page
+function slide(value){
+  if(value == "True"){
+  document.getElementById('page1').style.display = 'none'
+  document.getElementById('page2').style.display = 'block'
+}
+else{
+    document.getElementById('page1').style.display = 'none'
+    document.getElementById('page2').style.display = 'none'
+    document.getElementById('page3').style.display = 'block'
+
+  }
+}
+
 // fungsi untuk menghapus pesanan dari keranjang
 function hapus(id){
   var harga = document.getElementById(id).parentNode.parentNode.childNodes[3].textContent.split('Rp. ').join('').split('.').join('');
@@ -184,3 +234,91 @@ function hapus(id){
   });
 }
 
+// Fungsi validasi Dan Pengambilan Data User
+var data_pembeli = [];
+var btn_res = document.getElementById('btn_res');
+btn_res.addEventListener('click',function(){
+  var nama = $('#namacus').val();
+  var meja = $('#nomeja').val();
+  if (nama==''||meja=='') {
+    if (nama==''&& meja==''){
+      Swal.fire(
+      'Nama Dan Nomor Meja Tidak Boleh Kosong',
+      '',
+      'error'
+    )
+    }else if (nama=='') {
+      Swal.fire(
+        'Nama Tidak Boleh Kosong',
+        '',
+        'error'
+    )
+    }else{
+      Swal.fire(
+        'Nomor Meja Tidak Boleh Kosong',
+        '',
+        'error'
+    )
+    }
+  }else{
+    Swal.fire(
+        'Berhasil',
+        '',
+        'success'
+    )
+    slide('false')
+    data_pembeli.push(nama,meja)
+    console.log(data_pembeli);
+    console.log(meja);
+  }
+  
+})
+
+
+// Fungsi menampilkan struk pembayaran
+var bayar = document.getElementById('bayar');
+bayar.addEventListener('click',function(){
+  if(Object.keys(database).length != 0){
+    document.getElementById('page3').style.display = 'none';
+    document.getElementById('pay').style.display = 'block';
+    document.getElementById('customer').innerHTML = data_pembeli[0].toUpperCase();
+    document.getElementById('mejacus').innerHTML = data_pembeli[1];
+    
+    for(let i in database){
+      $('#pesanan').append(
+        '<tr id="row">'+
+          '<td>'+i+'</td>'+
+          '<td><td>Rp. </td><td style="text-align: right;">'+format(database[i][1])+'</td></td>'+
+          '<td><span style="color:white;">---</span>x '+database[i][0]+'<span style="color:white;">---</span></td>'+
+          '<td><td>Rp. </td><td style="text-align: right;">'+format(database[i][2])+'</td></td>'+
+        '<tr>');
+        document.getElementById('total bayar').innerHTML = format(jumlah);
+        document.getElementById('sisa uang').innerHTML = format(saldo);
+    };
+  }
+  else{
+    Swal.fire('Masukkan Pesanan Anda','','error')
+  };
+});
+
+
+// fungsi untuk layanan bantuan JS KHARISMA JANGAN DIHAPUS
+function bantuan(value) {
+  if (value == "True") {
+    document.getElementById("yes").style.display = "none";
+    document.getElementById("servis").style.display = "none";
+    document.getElementById("no").style.display = "block";
+  } else {
+    document.getElementById("no").style.display = "none";
+    document.getElementById("servis").style.display = "none";
+    document.getElementById("yes").style.display = "block";
+  }
+}
+
+// fungsi notif untuk klik kategori jika saldo 0
+var not = document.getElementById('kategori');
+not.addEventListener('click',function(){
+  if(saldo==0){
+    Swal.fire('Saldo Anda Rp. 0, Mohon Isi Saldo Terlebih Dahulu','','warning')
+  }
+})
