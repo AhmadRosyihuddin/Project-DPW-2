@@ -212,7 +212,7 @@ else{
 // fungsi untuk menghapus pesanan dari keranjang
 function hapus(id){
   var harga = document.getElementById(id).parentNode.parentNode.childNodes[3].textContent.split('Rp. ').join('').split('.').join('');
-  var menu = document.getElementById(id).parentNode.parentNode.childNodes[0].innerHTML.split(' ').join('_');
+  var menu = document.getElementById(id).parentNode.parentNode.childNodes[0].innerHTML
   var total = jumlah-harga;
   saldo += parseInt(harga);
   jumlah = total;
